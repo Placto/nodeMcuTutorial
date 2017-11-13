@@ -42,7 +42,10 @@ end
 --fonction de connexion au WIFI en mode station
 function connect()
     wifi.setmode(wifi.STATION)
-    wifi.sta.config(SSID, PASSWORD, 1)
+    station_cfg={}
+    station_cfg.ssid=SSID
+    station_cfg.pwd=PASSWORD
+    wifi.sta.config(station_cfg)
     wait_for_wifi_conn ( )
 end
 
